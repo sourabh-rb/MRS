@@ -1,0 +1,60 @@
+@import "variables";
+@import "reference";
+
+$fontPath: "../fonts";
+
+/* fix so that the 1000px max size works with bootstrap
+   if the UI changes, we can remove this
+*/
+@media (min-width: 1200px) {
+	.container {
+		width: 970px;
+	}
+}
+
+#add-patient-dialog {
+	width: 650px;
+}
+
+#sticky {
+	padding: 0.5ex;
+	height: 50px;
+	width: 940px;
+	transition: box-shadow 400ms;
+}
+
+#sticky.stick {
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.borderless td, .borderless th {
+	border: none;
+}
+
+#retire-button {
+	background-color: #7786ff;
+	background: #7786ff;
+	border: #7786ff 1px solid;
+	color: white;
+	display: inline-block;
+	max-width: 250px;
+	min-width: 0;
+	margin-right: 10px;
+}
+
+#register-provider-div {
+	float: right;
+}
+
+#search-patient-div {
+	width: 70%;
+}
+.disabled {
+	opacity: 0.4
+}
+.hidden {
+	visibility: hidden;
+}

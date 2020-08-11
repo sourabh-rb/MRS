@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_scan"
+        android:checkable="false"
+        android:enabled="true"
+        android:orderInCategory="100"
+        android:title="@string/menu_scan"
+        android:visible="true"
+        app:theme="@style/AppTheme"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_stop"
+        android:checkable="false"
+        android:enabled="true"
+        android:orderInCategory="101"
+        android:title="@string/menu_stop"
+        app:showAsAction="ifRoom|withText" />
+</menu>

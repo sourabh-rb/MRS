@@ -1,0 +1,16 @@
+@import "variables";
+
+.relationship {
+  position: relative;
+  border: 1px solid $lighterGrey;
+  padding: 3px;
+  margin-left: 10px;
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.add-confirm-spacer {
+  min-height: 110px;
+}

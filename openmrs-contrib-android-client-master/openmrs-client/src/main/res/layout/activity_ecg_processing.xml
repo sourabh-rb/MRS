@@ -1,0 +1,196 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context="org.openmrs.mobile.activities.ecganalysis.EcgProcessing">
+
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentStart="true">-->
+
+        <TextView
+            android:id="@+id/heartrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/main_lineChart"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="23dp"
+            android:text="@string/heart_rate" />
+
+        <TextView
+            android:id="@+id/hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/heartrate"
+            android:layout_alignStart="@+id/heartrate"
+            android:layout_alignTop="@+id/heartrate"
+            android:layout_marginTop="27dp"
+            android:text="@string/heartrate"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/hrv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/trigemtext"
+            android:layout_alignEnd="@+id/hrvtext"
+            android:text="hrv" />
+
+        <TextView
+            android:id="@+id/hrvtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/heartrate"
+            android:layout_alignBottom="@+id/heartrate"
+            android:layout_marginStart="28dp"
+            android:layout_toEndOf="@+id/heartrate"
+            android:text="@string/hrv" />
+
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/main_lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+        <TextView
+            android:id="@+id/bigemtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/hrvtext"
+            android:layout_alignBottom="@+id/hrvtext"
+            android:layout_alignStart="@+id/tach"
+            android:layout_marginStart="26dp"
+            android:text="@string/ventricular_bigeminy" />
+
+        <TextView
+            android:id="@+id/bigem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/hrv"
+            android:layout_alignBottom="@+id/hrv"
+            android:layout_alignStart="@+id/bigemtext"
+            android:layout_marginStart="30dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/trigemtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/hr"
+            android:layout_below="@+id/hr"
+            android:layout_marginTop="31dp"
+            android:text="@string/ventricular_trigeminy" />
+
+        <TextView
+            android:id="@+id/trigem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trigemtext"
+            android:layout_marginEnd="13dp"
+            android:layout_marginTop="11dp"
+            android:layout_toStartOf="@+id/hrv"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tachtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/trigemtext"
+            android:layout_alignBottom="@+id/trigemtext"
+            android:layout_marginStart="23dp"
+            android:layout_toEndOf="@+id/trigemtext"
+            android:text="Tachycardia" />
+
+        <TextView
+            android:id="@+id/tach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/trigem"
+            android:layout_alignBottom="@+id/trigem"
+            android:layout_alignEnd="@+id/tachtext"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/h2text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tachtext"
+            android:layout_toEndOf="@+id/bigem"
+            android:text="@string/bii_block" />
+
+        <TextView
+            android:id="@+id/h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/h2text"
+            android:layout_alignTop="@+id/tach"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/fluttertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/trigemtext"
+            android:layout_below="@+id/trigem"
+            android:layout_marginTop="25dp"
+            android:text="@string/ventricular_flutter" />
+
+        <TextView
+            android:id="@+id/flutter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/trigem"
+            android:layout_below="@+id/fluttertext"
+            android:layout_marginTop="13dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/couplettext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fluttertext"
+            android:layout_alignBottom="@+id/fluttertext"
+            android:layout_alignEnd="@+id/h2"
+            android:text="@string/ventricular_couplets" />
+
+        <TextView
+            android:id="@+id/couplet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/flutter"
+            android:layout_alignBottom="@+id/flutter"
+            android:layout_toEndOf="@+id/tach"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/couplettext"
+            android:layout_alignStart="@+id/trigemtext"
+            android:layout_below="@+id/flutter"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal"
+            android:text="Analysis" />
+
+        <TextView
+            android:id="@+id/analysis2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/analysis"
+            android:layout_alignStart="@+id/analysis"
+            android:layout_below="@+id/analysis"
+            android:gravity="center_horizontal"
+            />
+
+</RelativeLayout>
+

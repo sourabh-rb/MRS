@@ -1,0 +1,104 @@
+@import "variables";
+
+$rowHighlightBackground: #F26522;
+$green: #51A351;
+
+#patient-search-form {
+  input {
+    display: inline;
+  }
+}
+
+#patient-search-results {
+  margin-top: 1em;
+  display: none;
+
+  .patient-search-result {
+    padding: 10px 5px;
+    cursor: pointer;
+
+    &:nth-child(odd) {
+      background-color: $bodyBackground;
+    }
+
+    .patient-identifier {
+      display: inline-block;
+      .identifier-type {
+        display: block;
+        font-size: 0.6em;
+        text-decoration: underline;
+      }
+      .identifier {
+        display: block;
+      }
+    }
+
+    .preferred-name {
+      display: inline-block;
+      font-size: 1.5em;
+      padding: 5px;
+      width: 50%;
+    }
+
+    .age, .gender {
+      font-size: 1.2em;
+    }
+
+    a {
+      float: right;
+    }
+  }
+
+  #patient-search-results-table tbody tr:hover{
+    background-color: $rowHighlightBackground;
+    cursor: pointer;
+  }
+
+  #patient-search-results-table tbody tr:hover {
+    background: $link;
+    cursor: pointer;
+    color: white;
+  }
+
+  #patient-search-results-table tbody tr td.dataTables_empty:hover{
+    background: white;
+    cursor: default;
+    color: #363463;
+  }
+
+  #patient-search-results-table_wrapper {
+     min-height: 0px;
+  }
+}
+
+.search_table_row_highlight{
+  background-color: $rowHighlightBackground !important;
+}
+
+.search-widget-info{
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+.recent-lozenge {
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 0.7em;
+  border: 1px solid $green;
+  color: $green;
+  padding: 1px 2px;
+  border-radius: 4px;
+}
+
+img.search-spinner{
+  vertical-align: middle;
+}
+
+.patient-search-error{
+  color: $error;
+}
+
+#patient-search-clear-button {
+  position: relative;
+  right: 25px;
+}

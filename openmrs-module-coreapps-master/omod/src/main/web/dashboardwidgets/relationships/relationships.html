@@ -1,0 +1,85 @@
+<ul>
+    <li class="relationship-li" ng-show="$ctrl.relationships.length != 0" ng-repeat="relationship in $ctrl.relationships track by $index">
+        <div class="relationship-wrapper">
+            <div class="fifty-percent relationship-inner">
+                <span>
+                    <a ng-show="relationship.isPatient || relationship.isProvider" ng-click="$ctrl.goTo(relationship.toPerson.uuid)">
+                        {{relationship.toPerson.display ? relationship.toPerson.display : relationship.toPerson.personName.display}}
+                    </a>
+                    <span ng-show="!relationship.isPatient && !relationship.isProvider">{{relationship.toPerson.display ? relationship.toPerson.display : relationship.toPerson.personName.display}}</span>
+                </span>
+            </div>
+            <div class="tag forty-percent relationship-inner">
+                <span ng-show="$ctrl.hasEditPrivileges == true && $ctrl.removeFlag == false && $ctrl.edit == false" class="remove-tag">
+                    <a ng-show="relationship.isPatient" class="remove-link" ng-click="$ctrl.removeRelationship(relationship.uuid)">
+                        <i class="icon-remove" title="Remove relationship"></i>
+                    </a>
+                </span>
+                {{relationship.type}}
+            </div>
+        </div>
+    </li>
+    <p ng-show="$ctrl.relationships.length == 0">
+        {{ 'coreapps.none' | translate }}
+    </p>
+
+    <li ng-show="$ctrl.removeFlag">
+        {{ 'coreapps.dashboardwidgets.relationships.confirmRemove' | translate }}
+    </li>
+
+    <li ng-show="$ctrl.hasEditPrivileges && !$ctrl.edit && !$ctrl.removeFlag">
+        <a class="add-link" ng-click="$ctrl.addRelationship()">
+            <i class="icon-plus-sign" title="Add relationship"></i>
+        </a>
+    </li>
+
+    <li ng-show="$ctrl.edit">
+        {{ 'coreapps.dashboardwidgets.relationships.add' | translate }}
+    </li>
+
+    <li ng-show="$ctrl.edit">
+        <p class="left">
+        <select class="relationship-input" ng-options="type as type.name for type in $ctrl.types"
+                ng-model="$ctrl.relationshipType" ng-change="$ctrl.updateRelationshipType()">
+            <option value="">{{ 'coreapps.dashboardwidgets.relationships.whatType' | translate }}</option>
+        </select>
+
+        </p>
+    </li>
+    <li ng-show="$ctrl.showFindOtherPerson">
+        &nbsp;
+    </li>
+    <li ng-show="$ctrl.showFindOtherPerson">
+        <p class="left">
+            <input type="text" class="person-typeahead relationship-input" placeholder="{{ 'coreapps.relationships.find' | translate }} {{ $ctrl.relationshipType.name }}"
+                   ng-model="$ctrl.searchPerson"
+                   typeahead-no-results="noResults"
+                   ng-change="$ctrl.searchPersons()"
+                   uib-typeahead="person as person.display + ' (' + person.gender + ', ' + (person.age ? person.age:'') + ')' for person in $ctrl.relatedPersons"
+                   typeahead-wait-ms="250"
+                   typeahead-select-on-exact="true"
+                   typeahead-min-length="3"
+                   typeahead-on-select="$ctrl.onSelect($item, $model, $label)"
+                   />
+        </p>
+    </li>
+
+    <li ng-show="$ctrl.edit">
+        <p>
+        <div>
+            <button class="tag" ng-show="$ctrl.showSaveButton" ng-click="$ctrl.save()">{{ 'coreapps.save' | translate }}</button>
+            <button class="cancel-tag" ng-click="$ctrl.cancel()">{{ 'coreapps.cancel' | translate }}</button>
+        </div>
+        </p>
+    </li>
+
+    <li ng-show="$ctrl.removeFlag">
+        <p>
+        <div>
+            <button class="tag" ng-click="$ctrl.remove()">{{ 'coreapps.delete' | translate }}</button>
+            <button class="cancel-tag" ng-click="$ctrl.cancel()">{{ 'coreapps.cancel' | translate }}</button>
+        </div>
+        </p>
+    </li>
+
+</ul>

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "coreapps.labEntry",
+        "instanceOf": "coreapps.template.findPatient",
+        "description": "Enter various test details from laboratory",
+        "extensions": [
+            {
+                "id": "coreapps.activeVisitsHomepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "Laboratory Page",
+                "url": "coreapps/findpatient/findPatient.page?app=coreapps.labEntry",
+                "icon": "icon-medkit",
+                "requiredPrivilege": "App: coreapps.labEntry"
+            }
+        ],
+         "config": {
+            "afterSelectedUrl": "/coreapps/labentry/labEntry.page?patientId={{patientId}}",
+            "label": "Laboratory Access",
+            "heading": "Lab Test for Patient"
+        }
+    }
+] 

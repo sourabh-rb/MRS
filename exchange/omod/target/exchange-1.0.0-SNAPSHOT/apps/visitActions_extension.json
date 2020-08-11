@@ -1,0 +1,12 @@
+[
+    {
+        "id" : "${project.parent.artifactId}.exchange.visitActions.default",
+        "extensionPointId" : "patientDashboard.visitActions",
+        "type" : "link",
+        "label" : "Other Hospital Records",
+        "url" : "exchange/exchange.page?patient={{patient.uuid}}",
+        "icon" : "icon-exchange",
+        "order" : 200,
+        "requiredPrivilege" : "exchange.exchange.page"
+    }
+]

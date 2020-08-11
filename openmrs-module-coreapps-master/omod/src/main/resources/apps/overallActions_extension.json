@@ -1,0 +1,53 @@
+[
+    {
+        "id": "${project.parent.groupId}.${project.parent.artifactId}.createVisit",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "script",
+        "label": "coreapps.task.startVisit.label",
+        "script": "visit.showQuickVisitCreationDialog({{patient.patientId}})",
+        "icon": "icon-check-in",
+        "order": -20,
+        "require": "!visit && !patient.person.dead",
+        "requiredPrivilege": "Task: coreapps.createVisit"
+    },
+    {
+        "id": "${project.parent.groupId}.${project.parent.artifactId}.createRetrospectiveVisit",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "script",
+        "label": "coreapps.task.createRetrospectiveVisit.label",
+        "script": "visit.showRetrospectiveVisitCreationDialog()",
+        "icon": "icon-plus",
+        "order": -12,
+        "requiredPrivilege": "Task: coreapps.createRetrospectiveVisit"
+    },
+    {
+        "id": "${project.parent.groupId}.${project.parent.artifactId}.mergeVisits",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "coreapps.task.mergeVisits.label",
+        "url": "coreapps/mergeVisits.page?patientId={{patient.uuid}}",
+        "icon": "icon-link",
+        "order": 13,
+        "requiredPrivilege": "Task: coreapps.mergeVisits"
+    },
+    {
+        "id": "${project.parent.groupId}.${project.parent.artifactId}.markPatientDead",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "Link",
+        "label": "coreapps.markPatientDead.label",
+        "url": "coreapps/markPatientDead.page?patientId={{patient.uuid}}",
+        "icon": "icon-plus-sign-alt",
+        "order": 24,
+        "requiredPrivilege": "Task: coreapps.markPatientDead"
+    },
+    {
+        "id": "${project.parent.groupId}.${project.parent.artifactId}.deletePatient",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "script",
+        "label": "coreapps.task.deletePatient.label",
+        "script": "delPatient.showDeletePatientCreationDialog(&#x27;{{patient.uuid}}&#x27;)",
+        "icon": "icon-remove",
+        "order": 25,
+        "requiredPrivilege": "Task: coreapps.deletePatient"
+    }
+]

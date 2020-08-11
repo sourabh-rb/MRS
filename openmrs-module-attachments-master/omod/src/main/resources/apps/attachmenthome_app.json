@@ -1,0 +1,23 @@
+[
+    {
+        "id" : "${project.parent.artifactId}.attachments",
+        "instanceOf" : "coreapps.template.findPatient",
+        "description" : "Enter attachments from laboratory",
+        "extensions" : [
+            {
+                "id" : "coreapps.attachmentsHomepageLink",
+                "extensionPointId" : "org.openmrs.referenceapplication.homepageLink",
+                "type" : "link",
+                "label" : "Attach Document",
+                "url" : "coreapps/findpatient/findPatient.page?app=${project.parent.artifactId}.attachments",
+                "icon" : "icon-paper-clip",
+                "requiredPrivilege" : "App: attachments.attachments"
+            }
+        ],
+        "config" : {
+            "afterSelectedUrl" : "/attachments/attachmentHome.page?patientId={{patientId}}",
+            "label" : "Attachment",
+            "heading" : "Attach Document for Patient"
+        }
+    }
+]

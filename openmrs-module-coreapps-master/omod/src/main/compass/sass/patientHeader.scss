@@ -1,0 +1,250 @@
+@import "variables";
+@import "reference";
+
+$darkGray: #666;
+$green: #51A351;
+
+.patient-header {
+  position: relative;
+  overflow: hidden;
+  background: #F9F9F9;
+  z-index: 0;
+  border-bottom: 2px solid #EEE;
+  margin: -9px -9px 10px -9px;
+  padding: 5px 10px;
+  min-height: 60px;
+
+  &.dead {
+    background: #cccccc;
+
+    .death-header {
+      padding: 3px;
+      border: 1px solid $text;
+      border-radius: 2px;
+      font-size: 0.9em;
+      background: #FFFF44;
+      display: inline-block;
+    }
+  }
+
+  .demographics {
+    display: inline-block;
+    position: relative;
+    float: left;
+    vertical-align: top;
+
+    .name {
+      cursor: pointer;
+    }
+
+    h1 {
+      margin: 0;
+
+      span {
+         display: inline-block;
+
+         em {
+           font-size: 0.4em;
+           color: #888;
+           border-top: 1px solid #DDD;
+           display: block;
+         }
+       }
+    }
+
+    .gender-age {
+      font-size: 0.6em;
+      vertical-align: top;
+      margin-top: 10px;
+
+      small {
+        margin-left: 10px;
+      }
+    }
+
+    .contact-info-inline {
+      font-size: 0.6em;
+
+      em {
+        font-size: 0.7em;
+      }
+
+      small {
+        position: relative;
+        top: -15px;
+      }
+    }
+  }
+
+  .contact-info-label {
+    font-size: 0.8em;
+    margin-left: 10px;
+
+    .icon-caret-up, .icon-caret-down {
+      text-decoration: none;
+    }
+
+    .hide, .icon-caret-up {
+      display: none;
+    }
+
+    .show {
+      display: inline;
+    }
+
+    &.expanded {
+      .hide, .icon-caret-up {
+        display: inline;
+      }
+
+      .show, .icon-caret-down {
+        display: none;
+      }
+    }
+  }
+
+  .identifiers {
+    max-width: 520px;
+    display: inline-block;
+    float: right;
+    text-align: right;
+    margin-left: 20px;
+
+    em {
+      max-width: 170px;
+      min-width: 120px;
+      display: inline-block;
+      color: #888;
+      font-style: normal;
+      font-size: 0.9em;
+      border-bottom: 1px solid #DDD;
+    }
+
+    span {
+      background: $darkGray;
+      color: white;
+      letter-spacing: 1px;
+      margin: 2px;
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 0.8em;
+      @include border-radius(50px);
+
+      a, a:link, a:visited {
+        color: #FFF;
+      }
+
+      &.add-id {
+        background: none;
+
+        a, a:link, a:visited {
+          color: $link;
+        }
+      }
+    }
+
+  }
+
+  .colored-message {
+    @include horizontal-list;
+
+    color: white;
+    padding: 2px 4px;
+    border-radius: 1px;
+    margin-top: 4px;
+    font-size: 0.8em;
+  }
+
+  .bordered-colored-message {
+    @extend .colored-message;
+
+    border: 1px solid $darkGray;
+  }
+
+  .active-visit-started-at-message {
+    @extend .bordered-colored-message;
+
+    background: $green;
+    border-color: $green;
+  }
+
+  .active-visit-message {
+    @extend .bordered-colored-message;
+
+    background: $darkGray;
+    border-color: $darkGray;
+  }
+
+  .secondLineFragments {
+    clear: both;
+  }
+}
+
+.unknown-patient{
+  color: red;
+}
+
+.unknown-patient {
+  @include status-container;
+}
+
+.left-margin{
+  margin-left: 10px
+}
+
+.relationship-input {
+  width: 300px;
+}
+.sixty-percent {
+  width: 60%;
+}
+
+.fifty-percent {
+  width: 50%;
+}
+.forty-percent {
+  width: 40%;
+}
+
+.relationship-li {
+  display: flex;
+  width: 100%;
+}
+
+.relationship-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  flex-grow: 1;
+}
+
+.relationship-inner {
+  display: inline-block;
+}
+
+.remove-tag {
+  display: inline;
+  float: left;
+  padding: 2px 5px;
+  border-radius: 1px;
+  font-size: 0.8em;
+}
+
+.remove-link {
+  color: #003f5e;
+}
+
+.add-link {
+  color: #501d3d;
+}
+
+.cancel-tag {
+  background: #ff6666;
+  float: left;
+  min-width: 66px;
+  text-align: center;
+  color: white;
+  display: inline;
+  padding: 2px 5px;
+  border-radius: 1px;
+  font-size: 0.8em;
+}

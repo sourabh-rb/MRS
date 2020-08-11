@@ -1,0 +1,26 @@
+*.class
+*.iml
+*.idea
+.settings
+.project
+.classpath
+*.sass-cache
+target
+
+.DS_Store
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.css
+omod/src/main/compass/sass-external/*
+
+# Rubygems build directories #
+omod/.rubygems
+omod/.rubygems-provided
+
+# JS
+node
+node_modules

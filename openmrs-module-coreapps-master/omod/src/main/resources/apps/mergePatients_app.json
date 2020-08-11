@@ -1,0 +1,18 @@
+[
+    {
+        "id": "coreapps.mergePatients",
+        "description": "Merge patients medical records",
+        "order": 1,
+        "extensions": [
+            {
+                "id": "coreapps.mergePatientsHomepageLink",
+                "extensionPointId": "dataManagement.apps",
+                "type": "link",
+                "label": "coreapps.mergePatientsLong",
+                "url": "coreapps/datamanagement/mergePatients.page?app=coreapps.mergePatients",
+                "icon": "icon-group",
+                "requiredPrivilege": "App: coreapps.mergePatient"
+            }
+        ]
+    }
+]

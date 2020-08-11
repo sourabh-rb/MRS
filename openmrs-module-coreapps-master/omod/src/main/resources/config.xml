@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//OpenMRS//DTD OpenMRS Config 1.0//EN"
+        "http://resources.openmrs.org/doctype/config-1.4.dtd">
+
+<module configVersion="1.4">
+
+	<!-- Module Properties -->
+	<id>${project.parent.artifactId}</id>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
+	<package>${project.parent.groupId}.${project.parent.artifactId}</package>
+	<author>OpenMRS Developers</author>
+	<description>
+		${project.parent.description}
+	</description>
+	<updateURL>https://dev.openmrs.org/modules/download/${project.parent.artifactId}/update.rdf</updateURL>
+	<require_version>1.9.3</require_version>
+	<!-- / Module Properties -->
+
+	
+	<!-- Required Modules -->
+	<require_modules>
+																											
+		<require_module version="${appframeworkVersion}">
+			org.openmrs.module.appframework
+		</require_module>
+
+        <require_module version="${uiframeworkVersion}">
+            org.openmrs.module.uiframework
+        </require_module>
+
+        <require_module version="${emrapiVersion}">
+            org.openmrs.module.emrapi
+        </require_module>
+
+        <require_module version="${appuiVersion}">
+            org.openmrs.module.appui
+        </require_module>
+
+        <require_module version="${idgenVersion}">
+            org.openmrs.module.idgen
+        </require_module>
+
+        <require_module version="${webservicesRestVersion}">
+            org.openmrs.module.webservices.rest
+        </require_module>
+
+        <require_module version="${reportingVersion}">
+            org.openmrs.module.reporting
+        </require_module>
+
+    </require_modules>
+	<!-- / Required Modules -->
+
+    <aware_of_modules>
+        <aware_of_module version="${addresshierarchyVersion}">
+            org.openmrs.module.addresshierarchy
+        </aware_of_module>
+        <aware_of_module version="${htmlformentryVersion}">
+            org.openmrs.module.htmlformentry
+        </aware_of_module>
+    </aware_of_modules>
+
+	<!-- Module Activator -->
+	<activator>${project.parent.groupId}.${project.parent.artifactId}.CoreAppsActivator</activator>
+	
+	
+	<!-- Maps hibernate file's, if present -->
+	<mappingFiles>
+				
+	</mappingFiles>
+
+	<!-- Internationalization -->
+	<!-- All message codes should start with ${project.parent.artifactId}. -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+	<messages>
+		<lang>ht</lang>
+		<file>messages_ht.properties</file>
+	</messages>
+	<messages>
+		<lang>pt</lang>
+		<file>messages_pt.properties</file>
+	</messages>
+	<messages>
+		<lang>de</lang>
+		<file>messages_de.properties</file>
+	</messages>
+	<messages>
+		<lang>de</lang>
+		<file>messages_de.properties</file>
+	</messages>
+	<messages>
+		<lang>fa</lang>
+		<file>messages_fa.properties</file>
+	</messages>
+	<messages>
+		<lang>si</lang>
+		<file>messages_si.properties</file>
+	</messages>
+	<messages>
+		<lang>hi</lang>
+		<file>messages_hi.properties</file>
+	</messages>
+	<messages>
+		<lang>ar</lang>
+		<file>messages_ar.properties</file>
+	</messages>
+	<messages>
+		<lang>pl</lang>
+		<file>messages_pl.properties</file>
+	</messages>
+	<messages>
+		<lang>it</lang>
+		<file>messages_it.properties</file>
+	</messages>
+	<messages>
+		<lang>el</lang>
+		<file>messages_el.properties</file>
+	</messages>
+	<messages>
+		<lang>ru</lang>
+		<file>messages_ru.properties</file>
+	</messages>
+	<messages>
+		<lang>lt</lang>
+		<file>messages_lt.properties</file>
+	</messages>
+	<messages>
+		<lang>hy</lang>
+		<file>messages_hy.properties</file>
+	</messages>
+	<messages>
+		<lang>te</lang>
+		<file>messages_te.properties</file>
+	</messages>
+	<messages>
+		<lang>sw</lang>
+		<file>messages_sw.properties</file>
+	</messages>
+	<messages>
+		<lang>ku</lang>
+		<file>messages_ku.properties</file>
+	</messages>
+	<messages>
+		<lang>id_ID</lang>
+		<file>messages_id_ID.properties</file>
+	</messages>
+    <!-- /Internationalization -->
+
+    <!-- Global Properties -->
+    <globalProperty>
+        <property>coreapps.defaultPatientIdentifierLocation</property>
+        <defaultValue></defaultValue>
+        <description>
+            When adding a new patient identifier via the patient dashboard, the location to use if not specified (and the identifier type requires a location)
+        </description>
+    </globalProperty>
+
+	<globalProperty>
+		<property>coreapps.recentDiagnosisPeriodInDays</property>
+		<defaultValue></defaultValue>
+		<description>
+			Number of days to consider diagnosis as recent
+		</description>
+	</globalProperty>
+
+    <globalProperty>
+        <property>coreapps.dashboardUrl</property>
+        <defaultValue>/coreapps/clinicianfacing/patient.page?patientId={{patientId}}</defaultValue>
+        <description>
+            Allows one to override the default dashboard url
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.visitsPageUrl</property>
+        <defaultValue>/coreapps/patientdashboard/patientDashboard.page?patientId={{patientId}}&#35;visits</defaultValue>
+        <description>
+            Allows one to override the default general patient visits page
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.visitsPageWithSpecificVisitUrl</property>
+        <defaultValue>/coreapps/patientdashboard/patientDashboard.page?patientId={{patientId}}&amp;visitId={{visit.id}}&#35;</defaultValue>
+        <description>
+            Allows one to override the default page that displays the details of a specific patient visit
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.searchDelayShort</property>
+        <defaultValue>300</defaultValue>
+        <description>
+            Default time, in milliseconds, that the patient search waits for an additional keystroke before performed a search
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.searchDelayLong</property>
+        <defaultValue>1000</defaultValue>
+        <description>
+            Time, in milliseconds, that the patient search waits for an additional keystroke if only 1 or 2 characters have been entered
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.patientDashboardEncounterCount</property>
+        <defaultValue>100</defaultValue>
+        <description>
+            Maximum number of encounters to be loaded and displayed at once on the patient dashboard.
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.visitTypeColors</property>
+        <defaultValue></defaultValue>
+        <description>
+            Set visit type colors in JSON-like format. Syntax
+            [
+                {"uuid":"visit_type1_uuid", "color":"red", "shortName":"inpatient"},
+                {"uuid":"visit_type2_uuid", "color":"blue", "shortName":"oper_theater"}
+            ]
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.showVisitTypeOnPatientHeaderSection</property>
+        <defaultValue>false</defaultValue>
+        <description>
+            On the active status and patient header sections, display inpatient/outpatient (based on whether
+            a visit has an admission encounter) or the associated visit type.
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.transferEncounterUuid</property>
+        <defaultValue></defaultValue>
+        <description>
+            Set encounter uuid if you would like to create a transfer encounter when visit type is changed
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>coreapps.conceptStickyNote</property>
+        <defaultValue>CIEL:162169</defaultValue>
+        <description>
+            Mapping of the concept used for the Sticky Note. In the form of SOURCE:NUMBER.
+        </description>
+    </globalProperty>
+
+    <privilege>
+        <name>Task: coreapps.editRelationships</name>
+        <description>Able to edit relationships</description>
+    </privilege>
+
+    <privilege>
+        <name>Task: coreapps.endVisit</name>
+        <description>Able to end a visit</description>
+    </privilege>
+
+	<privilege>
+		<name>Task: coreapps.createVisit</name>
+		<description>Able to create a visit</description>
+	</privilege>
+
+	<privilege>
+		<name>Task: coreapps.createRetrospectiveVisit</name>
+		<description>Able to create a retrospective visit</description>
+	</privilege>
+
+	<privilege>
+		<name>Task: coreapps.mergeVisits</name>
+		<description>Able to merge visits</description>
+	</privilege>
+
+    <privilege>
+        <name>Task: coreapps.deletePatient</name>
+        <description>Able to delete a patient</description>
+    </privilege>
+
+	<privilege>
+		<name>App: coreapps.findPatient</name>
+		<description>Able to access the find patient app</description>
+	</privilege>
+
+    <privilege>
+        <name>App: coreapps.patientDashboard</name>
+        <description>Able to access the patient dashboard</description>
+    </privilege>
+
+    <privilege>
+        <name>App: coreapps.summaryDashboard</name>
+        <description>Able to access summary dashboards</description>
+    </privilege>
+
+    <privilege>
+        <name>App: coreapps.patientVisits</name>
+        <description>Able to access the patient visits screen</description>
+    </privilege>
+
+    <privilege>
+        <name>App: coreapps.findPatient</name>
+        <description>Able to access the find patient app</description>
+    </privilege>
+
+	<privilege>
+		<name>App: coreapps.activeVisits</name>
+		<description>Able to access the active visits app</description>
+	</privilege>
+
+    <privilege>
+        <name>App: coreapps.dataManagement</name>
+        <description>Able to access data management apps</description>
+    </privilege>
+    
+    <privilege>
+        <name>App: coreapps.mergePatient</name>
+        <description>Able to access the merge patient app</description>
+    </privilege>
+
+    <privilege>
+        <name>Task: coreapps.enrollInProgram</name>
+        <description>Ability to enroll a patient in a program via the program status widget</description>
+    </privilege>
+
+    <privilege>
+        <name>Task: coreapps.editPatientProgram</name>
+        <description>Ability to edit a patient program via the program status widget</description>
+    </privilege>
+
+    <privilege>
+        <name>Task: coreapps.deletePatientProgram</name>
+        <description>Ability to delete a patient program via the program status widget</description>
+    </privilege>
+
+    <privilege>
+        <name>Task: Manage Condition Lists</name>
+        <description>Able to activate/inactivate/void condition lists.</description>
+    </privilege>
+
+</module>
+

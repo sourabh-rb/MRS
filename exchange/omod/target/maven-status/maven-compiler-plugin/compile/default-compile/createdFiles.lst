@@ -1,0 +1,5 @@
+org\openmrs\module\exchange\page\controller\GetinfoPageController.class
+org\openmrs\module\exchange\extension\html\AdminList.class
+org\openmrs\module\exchange\page\controller\ExchangePageController.class
+org\openmrs\module\exchange\fragment\controller\UsersFragmentController.class
+org\openmrs\module\exchange\web\controller\ExchangeController.class

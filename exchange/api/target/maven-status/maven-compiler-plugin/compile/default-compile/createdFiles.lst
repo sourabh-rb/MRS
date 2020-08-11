@@ -1,0 +1,7 @@
+org\openmrs\module\exchange\api\ExchangeService.class
+org\openmrs\module\exchange\BlockchainManager.class
+org\openmrs\module\exchange\api\dao\ExchangeDao.class
+org\openmrs\module\exchange\ExchangeActivator.class
+org\openmrs\module\exchange\api\impl\ExchangeServiceImpl.class
+org\openmrs\module\exchange\ExchangeConfig.class
+org\openmrs\module\exchange\Item.class

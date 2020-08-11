@@ -1,0 +1,114 @@
+[
+    {
+        "id": "coreapps.template.findPatient",
+        "description": "Basic patient search by ID or Name (using OpenMRS's standard patient search)",
+        "contextModel": [ "patientId" ],
+        "configOptions": [
+            {
+                "name": "afterSelectedUrl",
+                "description": "URL to go to after the user selects a patient. Supports {{patientId}}",
+                "defaultValue": "/coreapps/clinicianfacing/patient.page?patientId={{ patientId }}"
+            },
+            {
+                "name": "label",
+                "description": "Label used by the find patient widget",
+                "defaultValue": "coreapps.findPatient.app.label"
+            },
+            {
+                "name": "heading",
+                "description": "Heading used by the find patient widget",
+                "defaultValue": "coreapps.findPatient.app.label"
+            },
+            {
+                "name": "showLastViewedPatients",
+                "description": "Whether or not to show a list of the recently-viewed patients for the current user",
+                "defaultValue": true
+            },
+            {
+                "name": "breadcrumbs",
+                "description": "If specified, list of breadcrumbs for this page. (\"label\" will be translated, \"link\" will have /CONTEXTPATH prepended.) If not specified, default breadcrumbs are Home -> translate(label).",
+                "defaultValue": null
+            },
+            {
+                "name": "registrationAppLink",
+                "description": "Link to the registration app to be used, the default value of blank hides the registration button on the search widget and other pages. This link should not include the context path as this is added",
+                "defaultValue":  ""
+            }
+        ]
+    },
+	{
+		"id": "coreapps.template.activeVisits",
+		"description": "coreapps.activeVisits.app.description",
+		"configOptions": [
+			{
+				"name": "patientPageUrl",
+				"description": "URL pointing to a patient details page",
+				"defaultValue": "/coreapps/clinicianfacing/patient.page?patientId={{patientId}}"
+			}
+		]
+	},
+    {
+        "id": "coreapps.template.awaitingAdmission",
+        "description": "coreapps.app.awaitingAdmission.description",
+        "configOptions": [
+            {
+                "name": "patientPageUrl",
+                "description": "URL pointing to a patient details page",
+                "defaultValue": "/coreapps/clinicianfacing/patient.page?patientId={{patientId}}"
+            }
+        ]
+    },
+    {
+        "id": "coreapps.template.relationships",
+        "description": "Lists relationships, and lets you edit them",
+        "configOptions": [
+            {
+                "name": "title",
+                "description": "Label to display (can be a message code)",
+                "defaultValue": "coreapps.task.relationships.label"
+            },
+            {
+                "name": "excludeRelationshipTypes",
+                "description": "List of UUIDs of relationship types not to show",
+                "defaultValue": []
+            }
+        ]
+    },
+    {
+        "id": "coreapps.template.mostRecentEncounter",
+        "description": "Displays the most recent encounter of a specified type",
+        "configOptions": [
+            {
+                "name": "encounterTypeUuid",
+                "description": "UUID of the encounter type",
+                "defaultValue": ""
+            },
+            {
+                "name": "encounterDateLabel",
+                "description": "Message code for displaying last encounter date; code should have substitution element for date--for example 'Last Vitals On: {0}'",
+                "defaultValue": ""
+            },
+            {
+                "name": "definitionUiResource",
+                "description": "ui resource of html form to use when displaying the encounter (optional--if not specified, form associated with encounter is used",
+                "defaultValue": ""
+            }
+        ]
+    },
+    
+   
+    
+   {
+        "id": "coreapps.template.dashboardWidget",
+        "configOptions": [
+            {
+                "name": "icon",
+                "defaultValue": "icon-link"
+            },
+            {
+                "name": "label",
+                "defaultValue": "Links"
+            }
+        ]
+    }
+]
